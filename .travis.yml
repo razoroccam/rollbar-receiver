@@ -8,3 +8,6 @@ script: npm run lint
 
 notifications:
   email: false
+
+sudo: required
+dist: trusty

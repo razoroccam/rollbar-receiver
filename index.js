@@ -22,7 +22,7 @@ const STORAGE_FORMAT = 'v0'
 
 // (enviroment) configuration happens here
 const PORT = process.env['PORT'] || 3000
-const MONGODB_URI = process.env['PORT'] || 'mongodb://localhost/rollbar'
+const MONGODB_URI = process.env['MONGODB_URI'] || 'mongodb://localhost/rollbar'
 
 /**
  * APP WIRING STARTS HERE

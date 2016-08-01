@@ -39,8 +39,11 @@ var _rollbarConfig = {
     }
 };
 
-Exceptions can then read direct from mongodb (for now).
+// Rollbar snippet goes here: https://rollbar.com/docs/notifier/rollbar.js/
+
 ```
+
+Exceptions can then read direct from mongodb (for now).
 
 ## Development
 

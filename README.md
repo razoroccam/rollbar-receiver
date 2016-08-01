@@ -1,5 +1,7 @@
 # Rollbar Reciever
 
+[![Build Status](https://travis-ci.org/razoroccam/rollbar-receiver.svg?branch=master)](https://travis-ci.org/razoroccam/rollbar-receiver)
+
 A tiny API server for receiving tracked exceptions from client (browser/server) side rollbar instances
 
 ## Status / Notes

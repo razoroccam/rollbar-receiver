@@ -1,0 +1,30 @@
+{
+  "name": "rollbar-receiver",
+  "version": "0.0.1",
+  "description": "server for recieving rollbar client side exceptions",
+  "engines": {
+    "node": "6.3.x"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint index.js lib",
+    "lint-fix": "eslint --fix index.js lib"
+  },
+  "author": "sandfox",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "measured": "^1.1.0",
+    "mongodb": "^2.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^3.1.1",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-standard": "^2.0.0"
+  }
+}

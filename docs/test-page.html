@@ -1,0 +1,577 @@
+
+<!doctype html>
+<html i18n-values="dir:textdirection;
+                   hascustombackground:hasCustomBackground;
+                   bookmarkbarattached:bookmarkbarattached;
+                   lang:language">
+<head>
+
+<script>
+var _rollbarConfig = {
+    accessToken: "POST_CLIENT_ITEM_ACCESS_TOKEN",
+    captureUncaught: true,
+    captureUnhandledRejections: false,
+    rollbarJsUrl: "https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.js",
+    endpoint: "http://localhost:3000/",
+    payload: {
+        environment: "production"
+    }
+};
+// Rollbar Snippet
+!function(r){function e(t){if(o[t])return o[t].exports;var n=o[t]={exports:{},id:t,loaded:!1};return r[t].call(n.exports,n,n.exports,e),n.loaded=!0,n.exports}var o={};return e.m=r,e.c=o,e.p="",e(0)}([function(r,e,o){"use strict";var t=o(1).Rollbar,n=o(2);_rollbarConfig.rollbarJsUrl=_rollbarConfig.rollbarJsUrl||"https://d37gvrvc0wt4s1.cloudfront.net/js/v1.9/rollbar.min.js";var a=t.init(window,_rollbarConfig),i=n(a,_rollbarConfig);a.loadFull(window,document,!_rollbarConfig.async,_rollbarConfig,i)},function(r,e){"use strict";function o(r){return function(){try{return r.apply(this,arguments)}catch(e){try{console.error("[Rollbar]: Internal error",e)}catch(o){}}}}function t(r,e,o){window._rollbarWrappedError&&(o[4]||(o[4]=window._rollbarWrappedError),o[5]||(o[5]=window._rollbarWrappedError._rollbarContext),window._rollbarWrappedError=null),r.uncaughtError.apply(r,o),e&&e.apply(window,o)}function n(r){var e=function(){var e=Array.prototype.slice.call(arguments,0);t(r,r._rollbarOldOnError,e)};return e.belongsToShim=!0,e}function a(r){this.shimId=++c,this.notifier=null,this.parentShim=r,this._rollbarOldOnError=null}function i(r){var e=a;return o(function(){if(this.notifier)return this.notifier[r].apply(this.notifier,arguments);var o=this,t="scope"===r;t&&(o=new e(this));var n=Array.prototype.slice.call(arguments,0),a={shim:o,method:r,args:n,ts:new Date};return window._rollbarShimQueue.push(a),t?o:void 0})}function l(r,e){if(e.hasOwnProperty&&e.hasOwnProperty("addEventListener")){var o=e.addEventListener;e.addEventListener=function(e,t,n){o.call(this,e,r.wrap(t),n)};var t=e.removeEventListener;e.removeEventListener=function(r,e,o){t.call(this,r,e&&e._wrapped?e._wrapped:e,o)}}}var c=0;a.init=function(r,e){var t=e.globalAlias||"Rollbar";if("object"==typeof r[t])return r[t];r._rollbarShimQueue=[],r._rollbarWrappedError=null,e=e||{};var i=new a;return o(function(){if(i.configure(e),e.captureUncaught){i._rollbarOldOnError=r.onerror,r.onerror=n(i);var o,a,c="EventTarget,Window,Node,ApplicationCache,AudioTrackList,ChannelMergerNode,CryptoOperation,EventSource,FileReader,HTMLUnknownElement,IDBDatabase,IDBRequest,IDBTransaction,KeyOperation,MediaController,MessagePort,ModalWindow,Notification,SVGElementInstance,Screen,TextTrack,TextTrackCue,TextTrackList,WebSocket,WebSocketWorker,Worker,XMLHttpRequest,XMLHttpRequestEventTarget,XMLHttpRequestUpload".split(",");for(o=0;o<c.length;++o)a=c[o],r[a]&&r[a].prototype&&l(i,r[a].prototype)}return e.captureUnhandledRejections&&(i._unhandledRejectionHandler=function(r){var e=r.reason,o=r.promise,t=r.detail;!e&&t&&(e=t.reason,o=t.promise),i.unhandledRejection(e,o)},r.addEventListener("unhandledrejection",i._unhandledRejectionHandler)),r[t]=i,i})()},a.prototype.loadFull=function(r,e,t,n,a){var i=function(){var e;if(void 0===r._rollbarPayloadQueue){var o,t,n,i;for(e=new Error("rollbar.js did not load");o=r._rollbarShimQueue.shift();)for(n=o.args,i=0;i<n.length;++i)if(t=n[i],"function"==typeof t){t(e);break}}"function"==typeof a&&a(e)},l=!1,c=e.createElement("script"),d=e.getElementsByTagName("script")[0],p=d.parentNode;c.crossOrigin="",c.src=n.rollbarJsUrl,c.async=!t,c.onload=c.onreadystatechange=o(function(){if(!(l||this.readyState&&"loaded"!==this.readyState&&"complete"!==this.readyState)){c.onload=c.onreadystatechange=null;try{p.removeChild(c)}catch(r){}l=!0,i()}}),p.insertBefore(c,d)},a.prototype.wrap=function(r,e){try{var o;if(o="function"==typeof e?e:function(){return e||{}},"function"!=typeof r)return r;if(r._isWrap)return r;if(!r._wrapped){r._wrapped=function(){try{return r.apply(this,arguments)}catch(e){throw e._rollbarContext=o()||{},e._rollbarContext._wrappedSource=r.toString(),window._rollbarWrappedError=e,e}},r._wrapped._isWrap=!0;for(var t in r)r.hasOwnProperty(t)&&(r._wrapped[t]=r[t])}return r._wrapped}catch(n){return r}};for(var d="log,debug,info,warn,warning,error,critical,global,configure,scope,uncaughtError,unhandledRejection".split(","),p=0;p<d.length;++p)a.prototype[d[p]]=i(d[p]);r.exports={Rollbar:a,_rollbarWindowOnError:t}},function(r,e){"use strict";r.exports=function(r,e){return function(o){if(!o&&!window._rollbarInitialized){var t=window.RollbarNotifier,n=e||{},a=n.globalAlias||"Rollbar",i=window.Rollbar.init(n,r);i._processShimQueue(window._rollbarShimQueue||[]),window[a]=i,window._rollbarInitialized=!0,t.processPayloads()}}}}]);
+// End Rollbar Snippet
+</script>
+
+
+<meta charset="utf-8">
+<title i18n-content="title"></title>
+<meta name="viewport" content="width=device-width">
+<!--<link rel="stylesheet" href="chrome://resources/css/text_defaults_md.css">-->
+<style>/* Copyright 2014 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file.
+ *
+ * Incognito and guest mode NTP shared CSS.
+ */
+
+body {
+  font-size: 85%;
+}
+
+h1 {
+  font-size: 200%;
+  font-weight: 300;
+  margin-bottom: .77em;
+}
+
+p {
+  line-height: 1.5;
+  margin: .588em 0;
+  text-align: start;
+}
+
+a {
+  color: rgb(51, 103, 214);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 'Learn More' button styled like a Material Design text button.
+ * TODO(edwardjung): Switch styled links to actual text buttons.
+ */
+.learn-more-button {
+  color: rgb(66, 133, 244);
+  display: inline-block;
+  font-size: 92.8%;
+  font-weight: 500;
+  margin-top: 1.98em;
+  padding: 10.5px 12px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.content {
+  box-sizing: border-box;
+  margin: 3.5em auto 0;
+  max-width: 480px;
+  min-width: 240px;
+  padding: 30px 35px;
+  text-align: center;
+}
+
+html[hascustombackground='true'] .content {
+  border-radius: 2px;
+  box-shadow: 0 4px 6px 1px rgba(0, 0, 0, 0.4);
+}
+
+.content > span {
+  display: block;
+}
+
+@media (max-width:700px) {
+  body {
+    margin: 1em 2em 2em;
+  }
+}
+
+@media (max-width:400px) {
+  body {
+    margin: 3em 1.5em 2em;
+  }
+
+  /* Adjustment for narrow screen to prevent horizontal scrollbar. */
+  .content {
+    padding: 16px 8px;
+  }
+}
+
+@media (max-height:480px) and (max-width:400px) {
+  .content {
+    margin: auto;
+  }
+}
+</style>
+<style>/* Copyright 2013 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+body {
+  margin-top: 0;
+}
+
+.content {
+  background-color: #323232;
+  color: white;
+}
+
+.icon {
+  content: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNDAgMjQwIj48ZyBvcGFjaXR5PSIuOCIgZmlsbD0iI0ZGRiI+PHBhdGggZD0iTTEyMSAwQzUzLjktLjYtLjYgNTMuOSAwIDEyMWMuNiA2NS4yIDUzLjggMTE4LjQgMTE5IDExOSA2Ny4xLjYgMTIxLjYtNTMuOSAxMjEtMTIxQzIzOS40IDUzLjggMTg2LjIuNiAxMjEgMHpNOTAuNSA1OWMuMy0uOSAxLTEuNSAyLjItMS4yIDIuMi41IDE5LjkgNC4zIDE5LjkgNC4zczM2LjgtNS42IDM4LjEtNS45YzEuMS0uMiAxLjkuNCAyLjEgMS40LjEuNCA2LjMgMjEuMyAxMS43IDM5LjVINzguM0M4My45IDc5LjYgOTAuMSA2MCA5MC41IDU5em04NS45IDEwMy4zYy0uOCAxMi4yLTEwLjcgMjIuMS0yMi45IDIyLjktMTQuMy45LTI2LjEtMTAuNC0yNi4xLTI0LjUgMC0uNyAwLTEuNC4xLTIuMS0yLS43LTQuMi0xLTYuNC0xLTIuMyAwLTQuNS40LTYuNyAxLjEuMS43LjEgMS4zLjEgMiAwIDE0LjEtMTEuOCAyNS40LTI2LjEgMjQuNS0xMi4yLS44LTIyLjEtMTAuNy0yMi45LTIyLjktLjgtMTQuMiAxMC41LTI2LjEgMjQuNS0yNi4xIDEwLjIgMCAxOSA2LjMgMjIuNyAxNS4yIDIuNy0uOCA1LjUtMS4zIDguNC0xLjMgMi44IDAgNS41LjQgOC4xIDEuMiAzLjctOC45IDEyLjQtMTUuMSAyMi43LTE1LjEgMTQuMSAwIDI1LjQgMTEuOSAyNC41IDI2LjF6bTIzLjQtMzQuM0g0Mi40Yy0uMiAwLS4zLS4zLS4xLS40IDUuMi0yLjcgMzUuNC0xNy42IDc5LTE3LjYgNDMuNyAwIDczLjUgMTQuOCA3OC42IDE3LjYuMi4xLjEuNC0uMS40eiIvPjxjaXJjbGUgY3g9IjE1MS45IiBjeT0iMTYwLjgiIHI9IjE3LjQiLz48Y2lyY2xlIGN4PSI5MC4xIiBjeT0iMTYwLjgiIHI9IjE3LjQiLz48L2c+PC9zdmc+);
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+}
+
+h1 {
+  margin-top: .88em;
+  opacity: .8;
+}
+
+p {
+  opacity: .8;
+}
+
+.learn-more-button {
+  color: rgb(123, 170, 247);
+}
+</style>
+<script>
+// Until themes can clear the cache, force-reload the theme stylesheet.
+// document.write('<link id="incognitothemecss" rel="stylesheet" ' +
+//                'href="chrome://theme/css/incognito_new_tab_theme.css?' +
+//                Date.now() + '">');
+</script>
+</head>
+<body>
+<div class="content">
+  <div class="icon"></div>
+  <span>
+    <h1 i18n-content="incognitoTabHeading"></h1>
+    <p>
+      <span i18n-content="incognitoTabDescription"></span>
+    </p>
+    <p>
+      <span i18n-content="incognitoTabWarning"></span>
+    </p>
+  </span>
+  <a class="learn-more-button" i18n-content="learnMore" i18n-values=".href:learnMoreLink"></a>
+</div>
+</body>
+<!-- <script src="chrome://resources/js/cr.js"></script>
+<script>
+cr.define('ntp', function() {
+  'use strict';
+  /**
+   * Set whether the bookmarks bar is attached or not.
+   * @param {boolean} attached Whether the bar is attached or not.
+   */
+  function setBookmarkBarAttached(attached) {
+    document.documentElement.setAttribute('bookmarkbarattached', !!attached);
+  }
+
+  /** @param {!{hasCustomBackground: boolean}} themeData */
+  function themeChanged(themeData) {
+    document.documentElement.setAttribute('hascustombackground',
+                                          themeData.hasCustomBackground);
+    document.getElementById('incognitothemecss').href =
+        'chrome://theme/css/incognito_new_tab_theme.css?' + Date.now();
+  }
+
+  return {
+    setBookmarkBarAttached: setBookmarkBarAttached,
+    themeChanged: themeChanged,
+  };
+});
+</script> -->
+</html>
+<script>// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+/**
+ * @fileoverview This file defines a singleton which provides access to all data
+ * that is available as soon as the page's resources are loaded (before DOM
+ * content has finished loading). This data includes both localized strings and
+ * any data that is important to have ready from a very early stage (e.g. things
+ * that must be displayed right away).
+ */
+
+/** @type {!LoadTimeData} */ var loadTimeData;
+
+// Expose this type globally as a temporary work around until
+// https://github.com/google/closure-compiler/issues/544 is fixed.
+/** @constructor */
+function LoadTimeData() {}
+
+(function() {
+  'use strict';
+
+  LoadTimeData.prototype = {
+    /**
+     * Sets the backing object.
+     *
+     * Note that there is no getter for |data_| to discourage abuse of the form:
+     *
+     *     var value = loadTimeData.data()['key'];
+     *
+     * @param {Object} value The de-serialized page data.
+     */
+    set data(value) {
+      expect(!this.data_, 'Re-setting data.');
+      this.data_ = value;
+    },
+
+    /**
+     * Returns a JsEvalContext for |data_|.
+     * @returns {JsEvalContext}
+     */
+    createJsEvalContext: function() {
+      return new JsEvalContext(this.data_);
+    },
+
+    /**
+     * @param {string} id An ID of a value that might exist.
+     * @return {boolean} True if |id| is a key in the dictionary.
+     */
+    valueExists: function(id) {
+      return id in this.data_;
+    },
+
+    /**
+     * Fetches a value, expecting that it exists.
+     * @param {string} id The key that identifies the desired value.
+     * @return {*} The corresponding value.
+     */
+    getValue: function(id) {
+      expect(this.data_, 'No data. Did you remember to include strings.js?');
+      var value = this.data_[id];
+      expect(typeof value != 'undefined', 'Could not find value for ' + id);
+      return value;
+    },
+
+    /**
+     * As above, but also makes sure that the value is a string.
+     * @param {string} id The key that identifies the desired string.
+     * @return {string} The corresponding string value.
+     */
+    getString: function(id) {
+      var value = this.getValue(id);
+      expectIsType(id, value, 'string');
+      return /** @type {string} */ (value);
+    },
+
+    /**
+     * Returns a formatted localized string where $1 to $9 are replaced by the
+     * second to the tenth argument.
+     * @param {string} id The ID of the string we want.
+     * @param {...(string|number)} var_args The extra values to include in the
+     *     formatted output.
+     * @return {string} The formatted string.
+     */
+    getStringF: function(id, var_args) {
+      var value = this.getString(id);
+      if (!value)
+        return '';
+
+      var varArgs = arguments;
+      return value.replace(/\$[$1-9]/g, function(m) {
+        return m == '$$' ? '$' : varArgs[m[1]];
+      });
+    },
+
+    /**
+     * As above, but also makes sure that the value is a boolean.
+     * @param {string} id The key that identifies the desired boolean.
+     * @return {boolean} The corresponding boolean value.
+     */
+    getBoolean: function(id) {
+      var value = this.getValue(id);
+      expectIsType(id, value, 'boolean');
+      return /** @type {boolean} */ (value);
+    },
+
+    /**
+     * As above, but also makes sure that the value is an integer.
+     * @param {string} id The key that identifies the desired number.
+     * @return {number} The corresponding number value.
+     */
+    getInteger: function(id) {
+      var value = this.getValue(id);
+      expectIsType(id, value, 'number');
+      expect(value == Math.floor(value), 'Number isn\'t integer: ' + value);
+      return /** @type {number} */ (value);
+    },
+
+    /**
+     * Override values in loadTimeData with the values found in |replacements|.
+     * @param {Object} replacements The dictionary object of keys to replace.
+     */
+    overrideValues: function(replacements) {
+      expect(typeof replacements == 'object',
+             'Replacements must be a dictionary object.');
+      for (var key in replacements) {
+        this.data_[key] = replacements[key];
+      }
+    }
+  };
+
+  /**
+   * Checks condition, displays error message if expectation fails.
+   * @param {*} condition The condition to check for truthiness.
+   * @param {string} message The message to display if the check fails.
+   */
+  function expect(condition, message) {
+    if (!condition) {
+      console.error('Unexpected condition on ' + document.location.href + ': ' +
+                    message);
+    }
+  }
+
+  /**
+   * Checks that the given value has the given type.
+   * @param {string} id The id of the value (only used for error message).
+   * @param {*} value The value to check the type on.
+   * @param {string} type The type we expect |value| to be.
+   */
+  function expectIsType(id, value, type) {
+    expect(typeof value == type, '[' + value + '] (' + id +
+                                 ') is not a ' + type);
+  }
+
+  expect(!loadTimeData, 'should only include this file once');
+  loadTimeData = new LoadTimeData;
+})();
+</script><script>loadTimeData.data = {"bookmarkbarattached":true,"fontfamily":"'Helvetica Neue', 'Lucida Grande', sans-serif","fontsize":"75%","hasCustomBackground":false,"incognitoTabDescription":"Pages you view in incognito tabs won’t stick around in your browser’s history, cookie store, or search history after you’ve closed all of your incognito tabs. Any files you download or bookmarks you create will be kept.","incognitoTabHeading":"You’ve gone incognito","incognitoTabWarning":"However, you aren’t invisible. Going incognito doesn’t hide your browsing from your employer, your internet service provider, or the websites you visit.","language":"en","learnMore":"Learn more","learnMoreLink":"https://support.google.com/chrome/?p=incognito","textdirection":"ltr","title":"New Tab"};</script><script>// Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+// // Copyright (c) 2012 The Chromium Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style license that can be
+// found in the LICENSE file.
+
+/** @typedef {Document|DocumentFragment|Element} */
+var ProcessingRoot;
+
+/**
+ * @fileoverview This is a simple template engine inspired by JsTemplates
+ * optimized for i18n.
+ *
+ * It currently supports three handlers:
+ *
+ *   * i18n-content which sets the textContent of the element.
+ *
+ *     <span i18n-content="myContent"></span>
+ *
+ *   * i18n-options which generates <option> elements for a <select>.
+ *
+ *     <select i18n-options="myOptionList"></select>
+ *
+ *   * i18n-values is a list of attribute-value or property-value pairs.
+ *     Properties are prefixed with a '.' and can contain nested properties.
+ *
+ *     <span i18n-values="title:myTitle;.style.fontSize:fontSize"></span>
+ *
+ * This file is a copy of i18n_template.js, with minor tweaks to support using
+ * load_time_data.js. It should replace i18n_template.js eventually.
+ */
+
+var i18nTemplate = (function() {
+  /**
+   * This provides the handlers for the templating engine. The key is used as
+   * the attribute name and the value is the function that gets called for every
+   * single node that has this attribute.
+   * @type {!Object}
+   */
+  var handlers = {
+    /**
+     * This handler sets the textContent of the element.
+     * @param {!HTMLElement} element The node to modify.
+     * @param {string} key The name of the value in |data|.
+     * @param {!LoadTimeData} data The data source to draw from.
+     * @param {!Set<ProcessingRoot>} visited
+     */
+    'i18n-content': function(element, key, data, visited) {
+      element.textContent = data.getString(key);
+    },
+
+    /**
+     * This handler adds options to a <select> element.
+     * @param {!HTMLElement} select The node to modify.
+     * @param {string} key The name of the value in |data|. It should
+     *     identify an array of values to initialize an <option>. Each value,
+     *     if a pair, represents [content, value]. Otherwise, it should be a
+     *     content string with no value.
+     * @param {!LoadTimeData} data The data source to draw from.
+     * @param {!Set<ProcessingRoot>} visited
+     */
+    'i18n-options': function(select, key, data, visited) {
+      var options = data.getValue(key);
+      options.forEach(function(optionData) {
+        var option = typeof optionData == 'string' ?
+            new Option(optionData) :
+            new Option(optionData[1], optionData[0]);
+        select.appendChild(option);
+      });
+    },
+
+    /**
+     * This is used to set HTML attributes and DOM properties. The syntax is:
+     *   attributename:key;
+     *   .domProperty:key;
+     *   .nested.dom.property:key
+     * @param {!HTMLElement} element The node to modify.
+     * @param {string} attributeAndKeys The path of the attribute to modify
+     *     followed by a colon, and the name of the value in |data|.
+     *     Multiple attribute/key pairs may be separated by semicolons.
+     * @param {!LoadTimeData} data The data source to draw from.
+     * @param {!Set<ProcessingRoot>} visited
+     */
+    'i18n-values': function(element, attributeAndKeys, data, visited) {
+      var parts = attributeAndKeys.replace(/\s/g, '').split(/;/);
+      parts.forEach(function(part) {
+        if (!part)
+          return;
+
+        var attributeAndKeyPair = part.match(/^([^:]+):(.+)$/);
+        if (!attributeAndKeyPair)
+          throw new Error('malformed i18n-values: ' + attributeAndKeys);
+
+        var propName = attributeAndKeyPair[1];
+        var propExpr = attributeAndKeyPair[2];
+
+        var value = data.getValue(propExpr);
+
+        // Allow a property of the form '.foo.bar' to assign a value into
+        // element.foo.bar.
+        if (propName[0] == '.') {
+          var path = propName.slice(1).split('.');
+          var targetObject = element;
+          while (targetObject && path.length > 1) {
+            targetObject = targetObject[path.shift()];
+          }
+          if (targetObject) {
+            targetObject[path] = value;
+            // In case we set innerHTML (ignoring others) we need to recursively
+            // check the content.
+            if (path == 'innerHTML') {
+              for (var i = 0; i < element.children.length; ++i) {
+                processWithoutCycles(element.children[i], data, visited, false);
+              }
+            }
+          }
+        } else {
+          element.setAttribute(propName, /** @type {string} */(value));
+        }
+      });
+    }
+  };
+
+  var prefixes = [''];
+
+  // Only look through shadow DOM when it's supported. As of April 2015, iOS
+  // Chrome doesn't support shadow DOM.
+  if (Element.prototype.createShadowRoot)
+    prefixes.push('* /deep/ ');
+
+  var attributeNames = Object.keys(handlers);
+  var selector = prefixes.map(function(prefix) {
+    return prefix + '[' + attributeNames.join('], ' + prefix + '[') + ']';
+  }).join(', ');
+
+  /**
+   * Processes a DOM tree using a |data| source to populate template values.
+   * @param {!ProcessingRoot} root The root of the DOM tree to process.
+   * @param {!LoadTimeData} data The data to draw from.
+   */
+  function process(root, data) {
+    processWithoutCycles(root, data, new Set(), true);
+  }
+
+  /**
+   * Internal process() method that stops cycles while processing.
+   * @param {!ProcessingRoot} root
+   * @param {!LoadTimeData} data
+   * @param {!Set<ProcessingRoot>} visited Already visited roots.
+   * @param {boolean} mark Whether nodes should be marked processed.
+   */
+  function processWithoutCycles(root, data, visited, mark) {
+    if (visited.has(root)) {
+      // Found a cycle. Stop it.
+      return;
+    }
+
+    // Mark the node as visited before recursing.
+    visited.add(root);
+
+    var importLinks = root.querySelectorAll('link[rel=import]');
+    for (var i = 0; i < importLinks.length; ++i) {
+      var importLink = /** @type {!HTMLLinkElement} */(importLinks[i]);
+      if (!importLink.import) {
+        // Happens when a <link rel=import> is inside a <template>.
+        // TODO(dbeam): should we log an error if we detect that here?
+        continue;
+      }
+      processWithoutCycles(importLink.import, data, visited, mark);
+    }
+
+    var templates = root.querySelectorAll('template');
+    for (var i = 0; i < templates.length; ++i) {
+      var template = /** @type {HTMLTemplateElement} */(templates[i]);
+      if (!template.content)
+        continue;
+      processWithoutCycles(template.content, data, visited, mark);
+    }
+
+    var isElement = root instanceof Element;
+    if (isElement && root.webkitMatchesSelector(selector))
+      processElement(/** @type {!Element} */(root), data, visited);
+
+    var elements = root.querySelectorAll(selector);
+    for (var i = 0; i < elements.length; ++i) {
+      processElement(elements[i], data, visited);
+    }
+
+    if (mark) {
+      var processed = isElement ? [root] : root.children;
+      if (processed) {
+        for (var i = 0; i < processed.length; ++i) {
+          processed[i].setAttribute('i18n-processed', '');
+        }
+      }
+    }
+  }
+
+  /**
+   * Run through various [i18n-*] attributes and populate.
+   * @param {!Element} element
+   * @param {!LoadTimeData} data
+   * @param {!Set<ProcessingRoot>} visited
+   */
+  function processElement(element, data, visited) {
+    for (var i = 0; i < attributeNames.length; i++) {
+      var name = attributeNames[i];
+      var attribute = element.getAttribute(name);
+      if (attribute != null)
+        handlers[name](element, attribute, data, visited);
+    }
+  }
+
+  return {
+    process: process
+  };
+}());
+
+
+i18nTemplate.process(document, loadTimeData);
+</script>
